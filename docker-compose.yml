@@ -52,6 +52,8 @@ services:
        - express-network
     depends_on:
       - mongodb
+    profiles:
+      - development
 
   redis:
     container_name: redis-caching
