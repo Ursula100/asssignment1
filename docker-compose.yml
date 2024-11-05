@@ -19,7 +19,7 @@ services:
     environment:
       - MONGODB_URI=mongodb://mongodb:27017/movies
       - REDIS_URI=redis://redis
-      - ENABLE_WRITING_HANDLERS='false'
+      - ENABLE_WRITING_HANDLERS=false
     networks:
        - api-network
        - cache-network
