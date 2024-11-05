@@ -26,6 +26,10 @@ services:
     depends_on:
       - mongodb
       - redis
+    profiles:
+      - development
+      - production
+
   mongodb:
     container_name: mongoDB
     image: mongo:8.0-rc
@@ -37,6 +41,9 @@ services:
        - express-network
     volumes: 
       - moviedata:/data/db  
+    profiles:
+      - development
+      - production
 
   mongo-express:
     container_name: express
@@ -54,6 +61,7 @@ services:
       - mongodb
     profiles:
       - development
+    
 
   redis:
     container_name: redis-caching
